@@ -1,88 +1,72 @@
-/* Base Styles */
+:root {
+  /* Light Theme */
+  --bg-primary: #f5f5f5;
+  --text-primary: #333;
+  --accent-primary: #0077b6;
+  --nav-bg: rgba(255, 255, 255, 0.96);
+  --white: #fff;
+  
+  /* Dark Theme */
+  --bg-dark: #121212;
+  --text-dark: #f5f5f5;
+  --accent-dark: #0d6efd;
+  --nav-bg-dark: rgba(0, 0, 0, 0.5);
+}
+
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f5f5f5; /* Light theme background */
-  color: #333; /* Light theme text */
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   scroll-behavior: smooth;
-  transition: background-color 0.3s, color 0.3s;
+  transition: all 0.3s ease;
+  
+  &.dark-theme {
+    --bg-primary: var(--bg-dark);
+    --text-primary: var(--text-dark);
+    --accent-primary: var(--accent-dark);
+    --nav-bg: var(--nav-bg-dark);
+  }
 }
 
 .custom-logo {
   font-family: 'Pacifico', cursive;
   font-size: 1.8rem;
-  color: #0077b6;
+  color: var(--accent-primary);
 }
 
-
-
-
-/* Section Styling */
-
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #0077b6;
-}
-
-/* Transparent Navbar with Enhanced Style */
+/* Navbar */
 .transparent-navbar {
-  background-color: rgba(255, 255, 255, 0.959); /* Slightly see-through light gray */
-  backdrop-filter: blur(4px); /* Optional: adds a nice blur to what's behind */
-  -webkit-backdrop-filter: blur(4px);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+  
+  .navbar-brand, .nav-link {
+    color: var(--text-primary);
+    transition: color 0.3s;
+    
+    &:hover { color: var(--accent-primary); }
+  }
+  
+  .dark-theme & {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
 }
 
-.transparent-navbar .navbar-brand {
-  color: #333;
-  transition: color 0.3s;
-}
-.transparent-navbar .nav-link {
-  color: #333;
-  transition: color 0.3s;
-}
-.transparent-navbar .nav-link:hover {
-  color: #0077b6;
-}
-
-/* Dark Theme Overrides */
-body.dark-theme {
-  background-color: #121212; /* Dark background */
-  color: #f5f5f5; /* Light text */
-}
-body.dark-theme .section h2 {
-  color: #0d6efd; /* Adjusted accent for dark theme */
-}
-body.dark-theme .transparent-navbar {
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark navbar */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-body.dark-theme .transparent-navbar .navbar-brand,
-body.dark-theme .transparent-navbar .nav-link {
-  color: #f5f5f5;
-}
-body.dark-theme .transparent-navbar .nav-link:hover {
-  color: #0d6efd;
-}
-
-/* Theme Toggle Button */
-#theme-toggle {
-  border: none;
-  background: none;
-  font-size: 1.2rem;
-  color:black;
-  transition: color 0.3s;
-}
-body.dark-theme #theme-toggle {
-  color: #f5f5f5;
-}
-
-
-/* Profile Photo Circle Styles */
+/* Profile Photo */
 .profile-photo-container {
-  display: inline-block;
-  position: relative;
   width: 300px;
   height: 300px;
+  
+  @media (max-width: 992px) {
+    width: 280px;
+    height: 280px;
+    margin-top: 2rem;
+  }
+  
+  @media (max-width: 576px) {
+    width: 220px;
+    height: 220px;
+  }
 }
 
 .profile-photo {
@@ -90,30 +74,9 @@ body.dark-theme #theme-toggle {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid white;
+  border: 5px solid var(--white);
   transition: transform 0.3s ease;
+  will-change: transform;
+  
+  &:hover { transform: scale(1.03); }
 }
-
-.profile-photo:hover {
-  transform: scale(1.03);
-}
-
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  .profile-photo-container {
-    width: 280px;
-    height: 280px;
-    margin-top: 2rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .profile-photo-container {
-    width: 220px;
-    height: 220px;
-  }
-}
-
-
-
-
