@@ -80,3 +80,71 @@ body {
   
   &:hover { transform: scale(1.03); }
 }
+
+/* About Section */
+/* About Section - Theme Compatible */
+
+.about-section h2 {
+  color: var(--accent-primary);
+  font-weight: 700;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+
+.about-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  background: var(--accent-primary);
+}
+
+.about-content {
+
+  padding: 2rem 2.5rem;
+  border-radius: 1rem;
+ 
+  transition: all 0.3s ease;
+ 
+}
+
+.about-content:hover {
+
+  transform: translateY(-3px);
+}
+
+
+/* Buttons */
+.about-section .btn {
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+
+
+/* Dark Theme Specific Adjustments */
+
+
+body.dark-theme .about-content {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .about-content:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-content {
+    padding: 1.5rem;
+  }
+  
+  .about-section h2::after {
+    width: 30%;
+  }
+}
+
