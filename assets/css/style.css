@@ -7,6 +7,14 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
+.custom-logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8rem;
+  color: #0077b6;
+}
+
+
+
 /* Section Styling */
 .section {
   padding: 7rem 1rem;
@@ -19,11 +27,12 @@ body {
 
 /* Transparent Navbar with Enhanced Style */
 .transparent-navbar {
-  background-color: transparent;
-  padding: 1rem 0;
-  transition: background-color 0.3s, border-bottom 0.3s;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(245, 245, 245, 0.8); /* Slightly see-through light gray */
+  backdrop-filter: blur(4px); /* Optional: adds a nice blur to what's behind */
+  -webkit-backdrop-filter: blur(4px);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
+
 .transparent-navbar .navbar-brand {
   color: #333;
   transition: color 0.3s;
@@ -61,7 +70,7 @@ body.dark-theme .transparent-navbar .nav-link:hover {
   border: none;
   background: none;
   font-size: 1.2rem;
-  color: #0077b6;
+  color:black;
   transition: color 0.3s;
 }
 body.dark-theme #theme-toggle {
