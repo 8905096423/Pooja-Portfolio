@@ -795,6 +795,23 @@ document.querySelector('.contact-form').addEventListener('submit', function(e) {
   // Reset form
   this.reset();
 });
+
+// Add this to your existing script section
+document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    // Check if navbar is collapsed (mobile view)
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    
+    if (window.getComputedStyle(navbarToggler).display !== 'none') {
+      // Close the navbar
+      const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+        toggle: false
+      });
+      bsCollapse.hide();
+    }
+  });
+});
   </script>
 </body>
 </html>
