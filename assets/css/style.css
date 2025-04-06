@@ -37,6 +37,65 @@ body.dark-theme {
   color: var(--accent-primary);
 }
 
+/* Custom navbar toggler styles */
+.navbar-toggler {
+  border: none;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.navbar-toggler .default-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  background-image: var(--bs-navbar-toggler-icon-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-toggler .close-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Make sure the icons don't show at the same time */
+.navbar-toggler .default-icon,
+.navbar-toggler .close-icon {
+  opacity: 1;
+}
+
+.navbar-toggler .d-none {
+  display: none !important;
+  opacity: 0;
+}
+
+navbar-toggler .default-icon {
+  /* Your existing styles */
+  filter: invert(0%); /* Ensures icon is dark in light mode */
+}
+
+.navbar-toggler .close-icon {
+  /* Your existing styles */
+  color: var(--light-text); /* Light theme text color */
+}
+
+/* Dark theme overrides */
+.dark-theme .navbar-toggler .default-icon {
+  filter: invert(100%); /* Makes the hamburger icon white in dark mode */
+}
+
+.dark-theme .navbar-toggler .close-icon {
+  color: var(--dark-text); /* Dark theme text color */
+}
 /* Navbar */
 .transparent-navbar {
   background-color: var(--nav-bg);
