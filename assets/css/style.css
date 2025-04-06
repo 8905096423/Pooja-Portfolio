@@ -375,69 +375,93 @@ body.dark-theme .subjects .badge {
 }
 
 /* Experience Section */
-.experience-section {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  transition: var(--transition);
+.experience-scroller {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px 0;
+  scrollbar-width: thin;
 }
 
 .experience-card {
-  background-color: var(--white);
-  border-radius: 0.75rem;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: var(--transition);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  height: 100%;
-  text-align: center;
+  min-width: 280px;
+  background: var(--white);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
 }
 
-.experience-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
-.experience-icon {
+.card-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.expand-btn {
+  background: none;
+  border: none;
   color: var(--accent-primary);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.experience-card h3 {
-  color: var(--accent-primary);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+.card-preview {
+  margin-bottom: 15px;
 }
 
 .timeline {
-  font-style: italic;
+  font-size: 0.8rem;
   color: var(--text-primary);
   opacity: 0.8;
+  margin-top: 8px;
 }
 
-.project-details h4 {
-  font-weight: 600;
-  margin: 1.5rem 0 1rem;
-  color: var(--text-primary);
+.card-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }
 
-.project-details ul li {
-  text-align: left;
-  padding: 0.25rem 0;
+.experience-card.active .card-details {
+  max-height: 300px;
+}
+
+.experience-card.active .expand-btn {
+  transform: rotate(180deg);
+}
+
+/* Dark Mode */
+body.dark-theme .experience-card {
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .experience-scroller {
+    padding-bottom: 20px;
+  }
+  
+  .experience-card {
+    min-width: 250px;
+  }
 }
 
 .career-aspiration {
   background-color: rgba(var(--accent-primary-rgb), 0.1);
   border-left: 4px solid var(--accent-primary);
-}
-
-/* Dark Theme Adjustments */
-body.dark-theme .experience-card {
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-body.dark-theme .experience-card:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 body.dark-theme .career-aspiration {
