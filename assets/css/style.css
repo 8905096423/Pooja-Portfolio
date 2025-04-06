@@ -374,3 +374,79 @@ body.dark-theme .subjects .badge {
   }
 }
 
+/* Experience Section */
+.experience-section {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.experience-card {
+  background-color: var(--white);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  height: 100%;
+  text-align: center;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.experience-icon {
+  color: var(--accent-primary);
+}
+
+.experience-card h3 {
+  color: var(--accent-primary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.timeline {
+  font-style: italic;
+  color: var(--text-primary);
+  opacity: 0.8;
+}
+
+.project-details h4 {
+  font-weight: 600;
+  margin: 1.5rem 0 1rem;
+  color: var(--text-primary);
+}
+
+.project-details ul li {
+  text-align: left;
+  padding: 0.25rem 0;
+}
+
+.career-aspiration {
+  background-color: rgba(var(--accent-primary-rgb), 0.1);
+  border-left: 4px solid var(--accent-primary);
+}
+
+/* Dark Theme Adjustments */
+body.dark-theme .experience-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .experience-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-theme .career-aspiration {
+  background-color: rgba(13, 110, 253, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .experience-card {
+    padding: 1.5rem;
+  }
+}
