@@ -32,7 +32,7 @@ Theme consistency
   --light-accent: #0077b6;           /* Light theme accent color (blue) */
   --light-nav-bg: rgba(255, 255, 255, 0.96); /* Semi-transparent navbar */
   --light-skill-box:#E8F9FF;
-  --light-skill-box:#E8F9FF;
+  --light-grey:#E8E8E8;
   --time-line-color:#00879E;
   --white: #fff;                     /* Pure white */
   --dark-bg: #121212;                /* Dark theme background */
@@ -291,7 +291,9 @@ section h2::after {
   border-radius: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   will-change: transform;
+ 
 }
+
 
 .about-content:hover {
   transform: translateY(-3px);
@@ -318,7 +320,7 @@ section h2::after {
   color: var(--time-line-color);
 }
 .skill-box {
-  background-color: var(--light-skill-box);
+  background-color: var(--light-grey);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   will-change: transform;
 }
@@ -363,6 +365,7 @@ section h2::after {
 .timeline-item {
   position: relative;
   margin-bottom: 2.5rem;
+ 
 }
 
 .timeline-item:last-child {
@@ -386,7 +389,7 @@ section h2::after {
 }
 
 .timeline-content {
-  background-color: var(--white);
+  background-color: var(--light-grey);
   padding: 1.5rem;
   border-radius: 0.75rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
