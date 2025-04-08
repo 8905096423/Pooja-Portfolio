@@ -54,6 +54,11 @@ body {
   color: var(--text-primary);        /* Applies variable */
 }
 
+/* Remove transitions for initial load */
+.initial-load * {
+  transition: none !important;
+}
+
 body.dark-theme {
   --bg-primary: var(--dark-bg);      /* Dark mode overrides */
   --text-primary: var(--dark-text);
@@ -67,6 +72,7 @@ body.dark-theme {
   font-size: 1.8rem;                 /* Larger size */
   color: var(--accent-primary);      /* Uses theme accent color */
 }
+
 
 
 /* Custom navbar toggler styles */
