@@ -192,6 +192,7 @@ navbar-toggler .default-icon {
   width: 100%;                       /* Full container width */
   height: 100%;                      /* Full container height */
   object-fit: cover;                 /* Ensures proper cropping */
+  object-position: center 15%;
   border-radius: 50%;                /* Circle shape */
   border: 5px solid var(--white);    /* White border */
   transition: transform 0.3s ease;   /* Hover animation */
