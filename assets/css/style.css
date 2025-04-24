@@ -54,6 +54,17 @@ body {
   color: var(--text-primary);        /* Applies variable */
 }
 
+
+
+/* Add to your style.css */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent layout shifts */
+img {
+  aspect-ratio: attr(width) / attr(height);
+}
 /* Remove transitions for initial load */
 .initial-load * {
   transition: none !important;
